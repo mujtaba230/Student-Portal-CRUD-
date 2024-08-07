@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-image: url('/assets/BG3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            margin: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="content text-center">
+        <hr class="border border-danger border-2 opacity-50">
+        <div class="p-3 mb-2 bg-warning-subtle text-warning-emphasis">
+            <h1>Welcome To The 
+                <small class="text-body-secondary">Student Portal</small>
+            </h1>
+        </div>
+        <hr class="border border-danger border-2 opacity-50">
+    </div>
+</body>
+</html>

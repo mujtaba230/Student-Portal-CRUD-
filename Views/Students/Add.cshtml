@@ -1,0 +1,64 @@
+﻿@*
+  
+*@
+@{
+}
+@model Student_Portal__CRUD_Ops_.Models.AddStudentViewModel
+
+
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-image: url('/assets/bgp1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            margin: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+
+<body>
+        <h1> Add Student</h1>
+
+
+        <form method="post">
+
+            <div class="mt-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" asp-for="Name" required></input>
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" asp-for="Email" required></input>
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Phone</label>
+                <input type="text" class="form-control" asp-for="Phone" required></input>
+            </div>
+
+            <div class="mt-3">
+                <input type="checkbox" class="form-check-input" id="Subscribed" asp-for="Subscribed"/>
+                <label class="form-check-label" for="Subscribed">Subscribed</label>
+
+            </div>
+
+            <div class="mt-3">
+                <button type="submit" class="btn btn-success" asp-action="Save" asp-controller="Students">Save</button>
+            </div>
+
+        </form>
+
+</body>

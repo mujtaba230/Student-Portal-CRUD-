@@ -1,0 +1,76 @@
+﻿@*
+
+*@
+@{
+}
+@model Student_Portal__CRUD_Ops_.Models.Entities.Student
+
+
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-image: url('/assets/bgp1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            margin: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+            <h1> Edit Student</h1>
+
+            @if (Model is null)
+            {
+                <p>Student was not found with this ID</p>
+            }
+            else
+            {
+                <form method="post">
+
+                    <div class="mt-3">
+                        <label class="form-label">ID</label>
+                        <input type="text" class="form-control" asp-for="Id" readonly></input>
+                    </div>
+
+                    <div class="mt-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" asp-for="Name"></input>
+                    </div>
+
+                    <div class="mt-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" asp-for="Email"></input>
+                    </div>
+
+                    <div class="mt-3">
+                        <label class="form-label">Phone</label>
+                        <input type="text" class="form-control" asp-for="Phone"></input>
+                    </div>
+
+                    <div class="mt-3">
+                        <input type="checkbox" class="form-check-input" id="Subscribed" asp-for="Subscribed" />
+                        <label class="form-check-label" for="Subscribed">Subscribed</label>
+
+                    </div>
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-success">Save</button>
+                        <button type="submit" class="btn btn-danger ms-3" asp-action="Delete" asp-controller="Students">Delete</button>
+                    </div>
+
+                </form>
+
+            }
+
+              </body>

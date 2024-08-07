@@ -1,0 +1,64 @@
+﻿@*
+*@
+@{
+}
+@model List<Student_Portal__CRUD_Ops_.Models.Entities.Student>
+
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-image: url('/assets/bgp1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            margin: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+            <h1> Students</h1>
+
+            <a class="btn btn-primary " asp-controller="Students" asp-action="Add">Add New Student</a>
+
+            <table class="table mb-10 mt-5">
+                <thead>
+                    <tr class ="table-info">
+                        <th> Id </th>
+                        <th> Name </th>
+                        <th>Email</th>
+          
+                        <th>
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in Model)
+                    {
+                        <tr class="table-warning">
+                            <td> @student.Id </td>
+                            <td> @student.Name </td>
+                            <td> @student.Email </td>
+                            <td>
+                                <a class="btn btn-warning" asp-controller="Students" asp-action="Edit" asp-route-id="@student.Id">Edit</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+ </body>
